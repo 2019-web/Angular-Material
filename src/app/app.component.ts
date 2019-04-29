@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular';
+
+  time = 0;
+
+  ngOnInit():void {
+    let self = this;
+    setInterval(function () {
+      self.time += 1;
+    }, 1000);
+  }
+
+  addOneSecond():void {
+    this.time += 1;
+  }
 }
